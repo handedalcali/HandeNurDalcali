@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Öneri Gönder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Film/Dizi Öner</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Anasayfa</a></li>
+        <li><a href="genres.html">Türler</a></li>
+        <li><a href="movies.html">Filmler</a></li>
+        <li><a href="series.html">Diziler</a></li>
+        <li><a href="anime.html">Animeler</a></li>
+        <li><a href="game.html">Oyunlar</a></li>
+        <li><a href="actors.html">Oyuncular</a></li>
+        <li><a href="form.html" class="active">Öneri Gönder</a></li> <!-- Öneri Gönder sayfası aktif -->
+        <li><a href="suggestions.html">Öneriler</a></li>
+        <li><a href="watchlist.html">İzleme Listem</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <main> <!-- Ana içerik bölümü -->
+      <form id="suggestionForm"> <!-- Film/Dizi önerisi gönderme formu -->
+        <label for="name">İsim:</label> <!-- Kullanıcıdan isim bilgisi alınacak alan -->
+        <input type="text" id="name" name="name" required>
+
+        <label for="type">Tür:</label> <!-- Tür seçimi için dropdown menü -->
+        <select id="type" name="type">
+          <option value="Film">Film</option> <!-- Film türü seçeneği -->
+          <option value="Dizi">Dizi</option> <!-- Dizi türü seçeneği -->
+        </select>
+
+        <label for="title">Başlık:</label> <!-- Kullanıcıdan önerilen başlık bilgisi alınacak alan -->
+        <input type="text" id="title" name="title" required>
+
+        <label for="category">Kategori:</label> <!-- Kullanıcıdan kategori bilgisi alınacak alan -->
+        <input type="text" id="category" name="category" required>      
+
+        <button type="submit">Gönder</button> <!-- Formu gönderme butonu -->
+      </form>
+    </main>
+
+  <footer> <!-- Sayfa alt bilgisi (footer) -->
+    <p>© 2025 Öneri & Takip Uygulaması</p>
+  </footer> 
+
+  <script src="../scripts/myscript.js"></script> <!-- Harici JavaScript dosyası bağlantısı -->
+</body>
+</html>

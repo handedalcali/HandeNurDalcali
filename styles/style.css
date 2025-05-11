@@ -1,0 +1,324 @@
+/* Temel sayfa ayarları ve yazı tipi düzenlemeleri */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Sayfanın dikey hizalaması için body'ye esnek kutu modeli uygulanıyor */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sayfa sarmalayıcı: içerik + footer'ın tamamını kapsıyor */
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Başlıklar için özel yazı tipi ve stil */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+/* Aktif linkleri vurgulamak için stil */
+nav a.active {
+  font-weight: bold;
+  border: 2px solid #ffffff; /* Çerçeve rengi ve kalınlığı */
+  padding: 5px 10px; /* Yazının çerçeveyle bitişik durmaması için boşluk */
+  border-radius: 5px; /* Köşeleri yuvarlamak istersen */
+  color: inherit; /* Yazı rengini değiştirmez */
+  text-decoration: none; /* Alt çizgi varsa kaldırmak için */
+}
+
+/* Üst kısım: header ve başlık stili */
+header {
+  background: linear-gradient(to right, #1f1c2c, #928dab);
+  color: #fff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Header içindeki başlık stili */
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+
+/* Navigasyon menüsü: yatay hizalama ve boşluklar */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Menü bağlantıları (linkler) */
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+/* Menü üzerine gelince arka plan değişimi */
+nav ul li a:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+/* Ana içerik alanı */
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+/* Footer (alt bilgi) alanı */
+footer {
+  background-color: #1f1c2c;
+  color: #ddd;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+/* Form alanı: öneri gönderme sayfası için */
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Form etiketleri (label) */
+form label {
+  display: block;
+  margin: 1rem 0 0.5rem;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Form giriş alanları ve açılır menüler */
+form input, form select {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Gönder butonu */
+form button {
+  background-color: #676485;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+/* Gönder butonuna hover efekti */
+form button:hover {
+  background-color: #928dab;
+}
+
+/* Düzenle ve Sil butonları için stil */
+.edit-btn,
+.delete-btn {
+  background-color: #676485;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  margin-right: 0.5rem;
+}
+
+/* Hover efekti: düzenle ve sil */
+.edit-btn:hover,
+.delete-btn:hover {
+  background-color: #928dab;
+}
+
+/* Butonlar yan yana gelsin diye */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Tablo düzeni: öneri listesi görünümü */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Tablo başlığı */
+table thead {
+  background-color: #676485;
+  color: #fff;
+}
+
+/* Tabloda kenarlık */
+table, th, td {
+  border: 1px solid #eee;
+}
+
+/* Hücre iç boşluk ve hizalama */
+th, td {
+  padding: 1rem;
+  text-align: left;
+}
+
+/* Satırların arka planını sırayla farklı yap */
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Küçük ekranlar için responsive tablo ve form düzeni */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  form, table, main {
+    width: 90%;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  tr {
+    margin-bottom: 1rem;
+  }
+
+  td {
+    padding-left: 50%;
+    position: relative;
+  }
+
+  /* Her hücreye başlık ekle (mobil görünüm için) */
+  td::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45%;
+    padding-left: 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  td:nth-of-type(1)::before { content: "İsim"; }
+  td:nth-of-type(2)::before { content: "Tür"; }
+  td:nth-of-type(3)::before { content: "Başlık"; }
+  td:nth-of-type(4)::before { content: "Kategori"; }
+}
+
+/* Film kartları için grid düzeni */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolon yap, her biri eşit genişlikte */
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: stretch;
+}
+
+
+/* Tek bir öneri kartı */
+.movie-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Üzerine gelince kart hafifçe yukarı çıksın */
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Kart içindeki görsel */
+.movie-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover; /* Kırp ve orantıyı koru */
+  border-radius: 8px;
+}
+
+/* Film başlığı */
+.movie-card h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+/* Açıklama */
+.movie-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Kategori sayfasındaki tür kartları için düzen */
+.genre-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Tek bir tür kartı */
+.genre-card {
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+/* Üzerine gelince tür kartını büyüt ve renk değiştir */
+.genre-card:hover {
+  transform: scale(1.03);
+  background-color: #f0f0f0;
+}
+
+/* Tür başlığı */
+.genre-card h3 {
+  font-family: 'Playfair Display', serif;
+  margin-top: 0;
+}
+
+/* Tür açıklaması */
+.genre-card p {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0.5em 0;
+}
